@@ -2,8 +2,10 @@
 
 @section('content')
 
+     
       <h1>id = {{ $tasklist->id }} 詳細ページ</h1>
 
+<p>タスク: {{ $tasklist->status }}</p>
     <p>{{ $tasklist->content }}</p>
     
      {!! link_to_route('tasklists.edit', 'このタスクを編集', ['id' => $tasklist->id]) !!}
