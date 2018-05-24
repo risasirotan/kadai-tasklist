@@ -49,12 +49,14 @@ class TasklistsController extends Controller
         $this->validate($request, [
     
             'content' => 'required|max:191',
+            'status' => 'required|max:191',
         ]);
 
         
        
         $tasklist = new Tasklist;
         $tasklist->content = $request->content;
+        $tasklist->status = $request->status;
         $tasklist->save();
 
         return redirect('/');

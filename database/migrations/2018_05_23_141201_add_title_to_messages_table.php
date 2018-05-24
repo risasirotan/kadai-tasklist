@@ -13,8 +13,8 @@ class AddTitleToMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::table('tasklists', function (Blueprint $table) {
-            $table->string('status')->default("未完了"); 
+        Schema::table('tasks', function (Blueprint $table) {
+            $table->string('status'); 
         });
     }
 
@@ -25,8 +25,8 @@ class AddTitleToMessagesTable extends Migration
      */
     public function down()
     {
-        Schema::table('tasklists', function (Blueprint $table) {
-           $table->dropColumn('title');
+        Schema::table('tasks', function (Blueprint $table) {
+           $table->dropColumn('status');
         });
     }
 }
